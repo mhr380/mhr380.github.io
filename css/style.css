@@ -1,0 +1,141 @@
+html {
+    font-size: 100%;
+}
+
+@font-face {
+    font-family: 'mgenplus';
+    src: url("../font/mgenplus-2cp-light.ttf") format("truetype");
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+    line-height: 1.3;
+    background-color: #ffffff; 
+    font-size: 1.2em;
+    font-family: "Source Sans Pro", "Helvetica", "Arial", "mgenplus", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS Pゴシック", "MS P Gothic", sans-serif;
+    line-height: 2.0; 
+    text-align: left;
+    width: 700px;
+    
+}
+
+::selection {
+    background:#f2e8d7; /* Safari */
+}
+::-moz-selection {
+    background:#f2e8d7; /* Firefox */
+}
+
+h1, h2, h3, h4{
+    letter-spacing: 2px;
+    color: #333;
+    font-family: 'mgenplus', 'Source Sans Pro', sans-serif;
+    text-indent: 0;
+    font-weight: 400;
+    text-align: left;
+}
+
+h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    line-height: 2em;
+}
+h2{ 
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+h3,h4{
+    font-size: 1.1em;
+}
+
+li {
+    margin-bottom: 0.6em;
+}
+p{
+    color: #aaa;
+    /* font-family: 'Open Sans', 'mgenplus'; */
+    padding-left: 1em;
+}
+
+
+a {
+    color: #808080;
+    text-decoration: none; /*リンクのアンダーラインを消す */
+}
+a:visited {
+    color: #808080;
+}
+a:focus {
+    color: #363947;
+    outline: thin dotted;
+}
+a:hover {
+    color: #363947;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 232, 215, 0.);
+}
+.header {
+    position: fixed;
+    padding-top: 10px;
+    height: auto;
+}
+.toplink a {
+    color: #333;
+    text-decoration: none;
+}
+.toplink a:visited {
+    color: #333;
+}
+
+.nav_head{
+    float: right;
+    font-size: 0.8em;
+    margin-left: 20px;
+    margin-right: 70px;
+    /* display: inline-block; */
+}
+
+.footer {
+    width: 900px;
+    bottom: 0px; 
+    position: fixed;
+    height: auto;
+    color: #bbb;
+    font-size: 0.8em;
+}
+
+#nav ul {
+    float: right;
+}
+#nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+.main{
+    padding-top: 100px;
+    padding-bottom: 60px;
+    margin-right: auto;
+    margin-left: auto;
+}
+table.list td.r1{
+    vertical-align: top; 
+    white-space: nowrap;
+    margin-right: auto;
+    margin-left: auto;
+}
+table.list td.r2{
+    vertical-align: top; 
+    padding-left: 10px;
+}
+.section p{
+    padding-left: 2em; 
+}
+.section img{
+    margin-left: 2em; 
+}
