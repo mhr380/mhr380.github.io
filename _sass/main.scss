@@ -7,6 +7,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #fff;
 }
 body {
   font-size: 14px;
@@ -15,6 +16,8 @@ body {
   font-style: normal;
   font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333333;
+  background-color: #fff;
+  min-height: 100%;
   padding: 20px;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -82,12 +85,6 @@ blockquote {
   position: relative;
   margin: 0 auto 35px;
   text-align: center;
-  animation-duration: 0.7s;
-  animation-fill-mode: both;
-  animation-name: bounce;
-  -webkit-animation-duration: 0.7s;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-name: bounce;
   a {
     background: #ddd url("logo_wrapper.png");
     color: #000;
@@ -333,6 +330,10 @@ article {
 section {
   max-width: 500px;
   margin: 0 auto 50px auto;
+  .center {
+    text-align: center;
+    margin: 2em 0 0;
+  }
   ul {
     list-style: none;
     margin: 0;
@@ -372,35 +373,107 @@ section {
     }
   }
 }
-@keyframes bounce {0% {
-    transform: translate3d( 0, -1000px, 0 );
-  }
-  60% {
-    transform: translate3d( 0, 25px, 0 );
-  }
-  75% {
-    transform: translate3d( 0, -10px, 0 );
-  }
-  90% {
-    transform: translate3d( 0, 5px, 0 );
-  }
-  100% {
-    transform: none;
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  .icon-sun {
+    display: none;
   }
 }
-@-webkit-keyframes bounce {0% {
-    -webkit-transform: translate3d( 0, -1000px, 0 );
+html[data-theme="dark"] .theme-toggle {
+  .icon-moon {
+    display: none;
   }
-  60% {
-    -webkit-transform: translate3d( 0, 25px, 0 );
+  .icon-sun {
+    display: block;
   }
-  75% {
-    -webkit-transform: translate3d( 0, -10px, 0 );
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  background-color: #161616;
+  body {
+    background-color: #161616;
+    color: #d6d6d6;
   }
-  90% {
-    -webkit-transform: translate3d( 0, 5px, 0 );
+  h1, h2, h3, h4, h5, h6 {
+    color: #eee;
   }
-  100% {
-    -webkit-transform: none;
+  a {
+    border-bottom-color: #888;
+  }
+  mark {
+    background: #5c5610;
+    color: #eee;
+  }
+  blockquote {
+    border-left-color: #555;
+    background: #222;
+  }
+  .logo a {
+    background-color: #333;
+    border-color: #161616;
+  }
+  time {
+    color: #aaa;
+  }
+  code {
+    background: #2a2a2a;
+  }
+  pre {
+    background-color: #1e1e1e;
+    border-color: #333;
+  }
+  table thead {
+    background: #222;
+  }
+  table th {
+    border-bottom-color: #161616;
+  }
+  article {
+    .divider {
+      background: #444;
+      background: linear-gradient(to right, rgba(22, 22, 22, 0), #555, rgba(22, 22, 22, 0));
+    }
+    hr {
+      border-bottom-color: #888;
+    }
+    a:hover {
+      color: #8ab4f8;
+      border-color: #8ab4f8;
+    }
+    .footnotes {
+      color: #aaa;
+    }
+  }
+  .back a:before {
+    color: #eee;
+  }
+  .footer {
+    color: #999;
+  }
+  section ul li {
+    a {
+      color: #eee;
+    }
+    span {
+      color: #999;
+    }
+    @media (min-width: 992px) {
+      a:hover {
+        border-color: #eee;
+      }
+    }
   }
 }

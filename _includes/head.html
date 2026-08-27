@@ -1,6 +1,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark">
+<script>
+	(function () {
+		var t = localStorage.getItem("theme") || "light";
+		document.documentElement.setAttribute("data-theme", t);
+		document.documentElement.style.backgroundColor = t === "dark" ? "#161616" : "#fff";
+	})();
+</script>
 
 {% if page.title %}
 	<title>{{ page.title }} · {{ site.title }}</title>
@@ -10,8 +18,8 @@
 
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-<link rel="icon" href="{{ "/assets/favicon.png" | prepend: site.baseurl | prepend: site.url }}">
-<link rel="apple-touch-icon" href="{{ "/assets/touch-icon.png" | prepend: site.baseurl | prepend: site.url }}">
+<link rel="icon" href="{{ site.logo_url }}">
+<link rel="apple-touch-icon" href="{{ site.logo_url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">

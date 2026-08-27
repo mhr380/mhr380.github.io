@@ -7,7 +7,7 @@ logo_url:           https://avatars.githubusercontent.com/u/7625670?v=4
 # Site Settings
 url:                https://mhr380.github.io
 baseurl:            ""
-permalink:          /notes/:title
+permalink:          /posts/:title
 timezone:           Asia/Tokyo
 mathjax:            true  # enables support for mathjax - set to 'false' to disable
 social_share_previews: true
