@@ -1,10 +1,16 @@
 ---
-layout: page
-title: About
+layout: null
+permalink: /about/
 ---
-
-Hello.
-
-This will be your About page. Anything about you, it should be written here in details. You may describe your bio here like who you are, what you do, your intention, social site hyperlinks and how people can contact you, etc.
-
-**Less is more..**
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0;url={{ '/' | absolute_url }}">
+<link rel="canonical" href="{{ '/' | absolute_url }}">
+<title>Redirecting…</title>
+</head>
+<body>
+<a href="{{ '/' | relative_url }}">About</a>
+</body>
+</html>
