@@ -79,7 +79,7 @@ blockquote {
   border-left: 5px solid #ccc;
   margin: 40px 0;
   padding: 5px 30px;
-  background: #eee;
+  background: #f3f1ed;
 }
 .logo {
   position: relative;
@@ -179,7 +179,7 @@ pre,
 }
 code {
   color: #f14e32;
-  background: #eee;
+  background: #f3f1ed;
   padding: 2px 6px;
   font-size: 13px;
 }
@@ -191,7 +191,7 @@ pre {
   line-height: 1.4;
   white-space: pre;
   overflow-x: auto;
-  background-color: #f9f9f9;
+  background-color: #f6f5f2;
   border: 1px solid #ddd;
   padding: 1rem;
   code {
@@ -206,7 +206,7 @@ table {
   table-layout: fixed;
   margin: 45px 0;
   thead {
-    background: #f2f2f2;
+    background: #f3f1ed;
   }
   th {
     text-align: left;
@@ -220,9 +220,13 @@ table {
 iframe {
   width: 100%;
 }
+#content {
+  background-color: #fcfbf8;
+}
 article {
   max-width: 500px;
   margin: 0 auto;
+  background-color: #fcfbf8;
   h1.title {
     line-height: 1.4em;
     text-align: center;
@@ -403,7 +407,9 @@ html[data-theme="dark"] .theme-toggle {
 html[data-theme="dark"] {
   color-scheme: dark;
   background-color: #161616;
-  body {
+  body,
+  #content,
+  article {
     background-color: #161616;
     color: #d6d6d6;
   }
