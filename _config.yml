@@ -1,8 +1,10 @@
 # Site Info
-title:              "notes"
+title:              "mhr380"
 description:        "mhr380's notes"
 author_name:        "mhr380"
-logo_url:           https://avatars.githubusercontent.com/u/7625670?v=4
+# logo_url:           https://avatars.githubusercontent.com/u/7625670?v=4
+logo_url:           /assets/avatar.png
+favicon_url:        /assets/favicon.jfif
 
 # Site Settings
 url:                https://mhr380.github.io
