@@ -8,8 +8,8 @@
 		var btn = document.getElementById("theme-toggle");
 		function apply(t) {
 			root.setAttribute("data-theme", t);
-			root.style.backgroundColor = t === "dark" ? "#161616" : "#fff";
-			document.body.style.backgroundColor = t === "dark" ? "#161616" : "#fff";
+			root.style.backgroundColor = t === "dark" ? "#161616" : "#fcfbf8";
+			document.body.style.backgroundColor = t === "dark" ? "#161616" : "#fcfbf8";
 		}
 		apply(root.getAttribute("data-theme") || "light");
 		btn.addEventListener("click", function () {

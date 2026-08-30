@@ -7,7 +7,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #fff;
+  background-color: #fcfbf8;
 }
 body {
   font-size: 14px;
@@ -16,7 +16,7 @@ body {
   font-style: normal;
   font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #333333;
-  background-color: #fff;
+  background-color: #fcfbf8;
   min-height: 100%;
   padding: 20px;
   margin: 0;
@@ -97,7 +97,7 @@ blockquote {
     display: inline-block;
     text-align: center;
     line-height: 100px;
-    border: 5px solid #fff;
+    border: 5px solid #fcfbf8;
     box-sizing: border-box;
     &:hover,
     &:focus {
@@ -211,7 +211,7 @@ table {
   th {
     text-align: left;
     padding: 8px 10px;
-    border-bottom: 15px solid #fff;
+    border-bottom: 15px solid #fcfbf8;
   }
   td {
     padding: 4px 0;
@@ -230,9 +230,9 @@ article {
   }
   .divider {
     background: #ddd;
-    background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(#ccc),to(rgba(255,255,255,0)));
-    background: -webkit-linear-gradient(left,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
-    background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+    background: -webkit-gradient(linear,left top,right top,from(rgba(252,251,248,0)),color-stop(#ccc),to(rgba(252,251,248,0)));
+    background: -webkit-linear-gradient(left,rgba(252,251,248,0),#ccc,rgba(252,251,248,0));
+    background: linear-gradient(to right,rgba(252,251,248,0),#ccc,rgba(252,251,248,0));
     height: 1px;
     margin: 2em 0;
   }
