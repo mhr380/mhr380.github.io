@@ -22,6 +22,11 @@ kramdown:
 sass:
     style:          :compressed
 
+# jekyll serve: Chrome stalls HTML5 video when WEBrick sends no-store
+webrick:
+  headers:
+    Cache-Control: public, max-age=3600
+
 # Other Params
 include:            [ "robots.txt" ]
 exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script", "serve.bat" ]

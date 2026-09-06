@@ -1,0 +1,19 @@
+{% assign amazon_file = include.image %}
+{% unless amazon_file %}
+{% assign amazon_file = site.data.amazon[include.url] %}
+{% endunless %}
+{% if amazon_file contains "://" %}
+{% assign amazon_image = amazon_file %}
+{% else %}
+{% assign amazon_image = '/assets/static/amazon/' | append: amazon_file | prepend: site.baseurl %}
+{% endif %}
+<div class="amazon-card">
+<a class="amazon-card-link" href="{{ include.url }}" target="_blank" rel="noopener sponsored">
+<span class="amazon-card-image"><img src="{{ amazon_image }}" alt="{{ include.title | escape }}"></span>
+<span class="amazon-card-body">
+<span class="amazon-card-title">{{ include.title }}</span>
+{% if include.brand %}<span class="amazon-card-brand">{{ include.brand }}</span>{% endif %}
+<span class="amazon-card-cta">Amazonで見る</span>
+</span>
+</a>
+</div>
