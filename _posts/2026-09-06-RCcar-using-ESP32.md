@@ -26,7 +26,7 @@ ESP32はWi-FiとBluetoothが載ったArduiono互換のマイコン。ゲーム�
 #### モータードライバ
 {% include amazon_card.html url="https://amzn.to/3VgKDsb" title="L298N モータードライブコントローラーボード" %}
 
-ESP32からの微小な信号（3.3V）を受けて、単3電池x4（12V）から供給される電流をスイッチングし、モーターへ流す役割。
+ESP32からの微小な信号（3.3V）を受けて、単3電池x4（6V）から供給される電流をスイッチングし、モーターへ流す役割。
 
 #### タイヤ＋ギヤードモーター
 {% include amazon_card.html url="https://amzn.to/46HyaAh" title="TTモーターホイールキット 4個セット DC3-12V 1A" %}
