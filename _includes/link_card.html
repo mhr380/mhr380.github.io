@@ -1,0 +1,36 @@
+{% assign card = site.data.links[include.url] %}
+{% assign card_title = include.title %}
+{% unless card_title %}
+{% if card %}{% assign card_title = card.title %}{% endif %}
+{% endunless %}
+{% assign card_file = include.image %}
+{% unless card_file %}
+{% if card %}{% assign card_file = card.image %}{% endif %}
+{% endunless %}
+{% assign card_brand = include.brand %}
+{% unless card_brand %}
+{% if card %}{% assign card_brand = card.brand %}{% endif %}
+{% endunless %}
+{% assign card_cta = include.cta %}
+{% unless card_cta %}
+{% if include.url contains "daisonet.com" %}
+{% assign card_cta = "ダイソーで見る" %}
+{% else %}
+{% assign card_cta = "サイトで見る" %}
+{% endif %}
+{% endunless %}
+{% if card_file contains "://" %}
+{% assign card_image = card_file %}
+{% else %}
+{% assign card_image = '/assets/static/links/' | append: card_file | prepend: site.baseurl %}
+{% endif %}
+<div class="amazon-card">
+<a class="amazon-card-link" href="{{ include.url }}" target="_blank" rel="noopener noreferrer">
+<span class="amazon-card-image"><img src="{{ card_image }}" alt="{{ card_title | escape }}"></span>
+<span class="amazon-card-body">
+<span class="amazon-card-title">{{ card_title }}</span>
+{% if card_brand %}<span class="amazon-card-brand">{{ card_brand }}</span>{% endif %}
+<span class="amazon-card-cta">{{ card_cta }}</span>
+</span>
+</a>
+</div>

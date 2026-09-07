@@ -1,0 +1,26 @@
+{% assign github_slug = include.url | split: "github.com/" | last | split: "?" | first | split: "#" | first | remove: ".git" %}
+{% assign github_parts = github_slug | split: "/" %}
+{% assign github_owner = github_parts[0] %}
+{% assign github_repo = github_parts[1] %}
+{% assign github_title = include.title %}
+{% unless github_title %}
+{% assign github_title = github_owner | append: "/" | append: github_repo %}
+{% endunless %}
+{% assign github_image = include.image %}
+{% unless github_image %}
+{% assign github_image = "https://github.com/" | append: github_owner | append: ".png?size=240" %}
+{% endunless %}
+<div class="amazon-card">
+<a class="amazon-card-link" href="{{ include.url }}" target="_blank" rel="noopener noreferrer">
+<span class="amazon-card-image"><img src="{{ github_image }}" alt="{{ github_title | escape }}"></span>
+<span class="amazon-card-body">
+<span class="amazon-card-title">{{ github_title }}</span>
+{% if include.brand %}
+<span class="amazon-card-brand">{{ include.brand }}</span>
+{% else %}
+<span class="amazon-card-brand">{{ github_owner }}</span>
+{% endif %}
+<span class="amazon-card-cta">GitHubで見る</span>
+</span>
+</a>
+</div>
