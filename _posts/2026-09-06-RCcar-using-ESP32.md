@@ -4,7 +4,7 @@ title: ESP32でラジコンを作ったメモ
 
 ## はじめに
 
-参考文献[[1](https://ameblo.jp/kenjii70/entry-12879925965.html)]を参考にしながら、ESP32でラジコンを作る。ほとんど参考文献のとおり＆AIフル活用です……。
+参考文献[[1](https://ameblo.jp/kenjii70/entry-12879925965.html)]を参考にしながら、ESP32でラジコンを作る。ほとんど参考文献のとおり＆AIフル活用。
 
 ## できたもの
 
@@ -23,14 +23,13 @@ title: ESP32でラジコンを作ったメモ
 {% include amazon_card.html url="https://amzn.to/4doQTnY" title="ELEGOO ESP-32-開発ボード Micro USB 2.4GHz デュアルモード CP2102チップ 2個セット" brand="ELEGOO" %}
 
 ESP32はWi-FiとBluetoothが載ったArduino互換のマイコン。ゲームコントローラーとも無線でつなげる。
-
-様々な開発ボードがある。よく確認せず買ったため、到着後にMicroUSBだったことに気づいた。USB-Cで通信できるボードのほうが使い勝手がいいはず。
+様々な開発ボードがあるが、よく確認せず買ったため、到着後にMicroUSBだったことに気づいた。USB-Cで通信できるボードのほうが使い勝手がいいはず。
 
 ### モータードライバ
 
 {% include amazon_card.html url="https://amzn.to/3VgKDsb" title="L298N モータードライブコントローラーボード" %}
 
-ESP32からの微小な信号（3.3V）を受けて、単3電池x4（6V）から供給される電流をスイッチングし、モーターへ流す役割。
+ESP32からの微小な信号を受けて、単3電池x4（6V）から供給される電流をスイッチングし、モーターへ流す役割。
 
 ### タイヤ＋ギヤードモーター
 
