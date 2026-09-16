@@ -44,7 +44,7 @@ DCモーターにギヤがついたセット。4つ入り。
 
 通常のブレッドボードだとESP32基板を挿し込むと、片側に空きがない。SAD-101だと、両側に空きができる。こちらのブログ[[2](https://spiceman.jp/esp32-recommendation/)]を参考にした。
 
-↓ 通常のブレッドボード。右側に空きがない。
+↓ 通常のブレッドボード。左側に空きがない。
 
 {% include image.html file="esp32_board_conventional.JPG" alt="通常のブレッドボード" %}
 
