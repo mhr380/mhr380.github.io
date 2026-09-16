@@ -17,13 +17,25 @@ POSTS_DIR = Path("_posts")
 INCLUDE_URL_RE = re.compile(r'link_card\.html[^}]*?\burl="([^"]+)"')
 
 
-def request(url: str) -> tuple[str, bytes]:
+def request(url: str) -> tuple[str, bytes, str]:
     req = urllib.request.Request(
         url,
         headers={"User-Agent": UA, "Accept-Language": "ja,en;q=0.8"},
     )
     with urllib.request.urlopen(req, timeout=20) as res:
-        return res.geturl(), res.read()
+        charset = res.headers.get_content_charset() or ""
+        return res.geturl(), res.read(), charset
+
+
+def decode_html(body: bytes, charset: str) -> str:
+    for enc in (charset, "utf-8", "shift_jis", "euc-jp", "cp932"):
+        if not enc:
+            continue
+        try:
+            return body.decode(enc)
+        except (LookupError, UnicodeDecodeError):
+            continue
+    return body.decode("utf-8", errors="replace")
 
 
 def meta(html: str, prop: str) -> str | None:
@@ -89,8 +101,8 @@ def slug_from_url(url: str) -> str:
 
 
 def fetch_card(url: str) -> dict[str, str]:
-    final_url, body = request(url)
-    html = body.decode("utf-8", errors="ignore")
+    final_url, body, charset = request(url)
+    html = decode_html(body, charset)
     title = meta(html, "og:title") or meta(html, "twitter:title")
     image_url = meta(html, "og:image") or meta(html, "twitter:image")
     brand = meta(html, "og:site_name")
@@ -100,7 +112,7 @@ def fetch_card(url: str) -> dict[str, str]:
         image_url = "https:" + image_url
     elif image_url.startswith("http://"):
         image_url = "https://" + image_url[len("http://") :]
-    _, img = request(image_url)
+    _, img, _ = request(image_url)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     dest = OUT_DIR / f"{slug_from_url(url)}.jpg"
     dest.write_bytes(img)
@@ -110,6 +122,8 @@ def fetch_card(url: str) -> dict[str, str]:
     if brand:
         if "ダイソー" in brand:
             brand = "ダイソー"
+        elif "ソニー" in brand or brand.lower() == "sony":
+            brand = "ソニー"
         fields["brand"] = brand
     return fields
 

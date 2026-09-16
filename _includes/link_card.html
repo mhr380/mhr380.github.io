@@ -15,6 +15,12 @@
 {% unless card_cta %}
 {% if include.url contains "daisonet.com" %}
 {% assign card_cta = "ダイソーで見る" %}
+{% elsif include.url contains "sony.jp" %}
+{% assign card_cta = "ソニーで見る" %}
+{% elsif include.url contains "muji.com" %}
+{% assign card_cta = "無印良品で見る" %}
+{% elsif include.url contains "wexley.com" %}
+{% assign card_cta = "Wexleyで見る" %}
 {% else %}
 {% assign card_cta = "サイトで見る" %}
 {% endif %}
