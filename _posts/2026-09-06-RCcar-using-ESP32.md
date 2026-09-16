@@ -23,7 +23,8 @@ title: ESP32でラジコンを作ったメモ
 {% include amazon_card.html url="https://amzn.to/4yDrEXl" title="Freenove ESP 32開発ボードキット (2個パック)" brand="Freenove" %}
 
 ESP32はWi-FiとBluetoothが載ったArduino互換のマイコン。ゲームコントローラーとも無線でつなげる。
-様々な開発ボードがあるが、よく確認せず買ったため、到着後にMicroUSBだったことに気づいた。USB-Cで通信できるボードのほうが使い勝手がいいはず。
+技適マーク付き・USB-Cコネクタつきで、2つ入り2700円だった。
+
 
 ### モータードライバ
 
