@@ -3,7 +3,7 @@ title: Everyday Carry (2026秋)
 ---
 
 ## はじめに
-Every Day Carry（EDC）のブログや動画を見るのが好きである。
+Everyday Carry（EDC）のブログや動画を見るのが好きである。
 自分も適当な写真だが、最近の持ち物をメモしておく。
 
 
