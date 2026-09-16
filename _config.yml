@@ -26,6 +26,7 @@ sass:
 webrick:
   headers:
     Cache-Control: public, max-age=3600
+    Accept-Ranges: bytes
 
 # Other Params
 include:            [ "robots.txt" ]
