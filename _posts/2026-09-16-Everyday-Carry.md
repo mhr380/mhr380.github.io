@@ -11,7 +11,7 @@ Everyday Carry（EDC）のブログや動画を見るのが好きである。
 
 
 #### ヘッドホン: Sony WH-1000XM3
-2019年頃に購入し、いまだ現役。
+2021年に購入し、いまだ現役。
 
 {% include link_card.html url="https://www.sony.jp/headphone/products/WH-1000XM3/" %}
 
