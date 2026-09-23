@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 import urllib.request
@@ -11,8 +12,8 @@ UA = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/120.0.0.0 Safari/537.36"
 )
-OUT_DIR = Path("assets/static/links")
-DATA_FILE = Path("_data/links.yml")
+OUT_DIR = Path("public/assets/static/links")
+DATA_FILE = Path("src/data/links.json")
 POSTS_DIR = Path("_posts")
 INCLUDE_URL_RE = re.compile(r'link_card\.html[^}]*?\burl="([^"]+)"')
 
@@ -54,38 +55,18 @@ def meta(html: str, prop: str) -> str | None:
     return m.group(1) if m else None
 
 
-def yaml_quote(value: str) -> str:
-    return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
-
-
 def load_map() -> dict[str, dict[str, str]]:
-    mapping: dict[str, dict[str, str]] = {}
     if not DATA_FILE.exists():
-        return mapping
-    current: str | None = None
-    for line in DATA_FILE.read_text(encoding="utf-8").splitlines():
-        head = re.match(r'^"([^"]+)":\s*$', line)
-        if head:
-            current = head.group(1)
-            mapping[current] = {}
-            continue
-        if current is None:
-            continue
-        field = re.match(r'^\s+(\w+):\s+"(.*)"\s*$', line)
-        if field:
-            mapping[current][field.group(1)] = field.group(2).replace('\\"', '"')
-    return mapping
+        return {}
+    return json.loads(DATA_FILE.read_text(encoding="utf-8"))
 
 
 def save_map(mapping: dict[str, dict[str, str]]) -> None:
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
-    lines: list[str] = []
-    for url, fields in sorted(mapping.items()):
-        lines.append(f"{yaml_quote(url)}:\n")
-        for key in ("image", "title", "brand"):
-            if key in fields:
-                lines.append(f"  {key}: {yaml_quote(fields[key])}\n")
-    DATA_FILE.write_text("".join(lines), encoding="utf-8")
+    DATA_FILE.write_text(
+        json.dumps(mapping, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 def urls_from_posts() -> list[str]:

@@ -1,5 +1,8 @@
+node_modules/
+dist/
+.astro/
+
 _site/
-*.gem
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
@@ -14,50 +17,24 @@ __pycache__/
 *.mov
 * copy.md
 * copy.*
-assets/static/old/
+public/assets/static/old/
 
-# As this is a ruby-gem project, we exclude the lock file; explained here:
-# https://stackoverflow.com/questions/4151495/should-gemfile-lock-be-included-in-gitignore
-Gemfile.lock
-
-# Windows image file caches
 Thumbs.db
 ehthumbs.db
-
-# Folder config file
 Desktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
-
-# Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
-
-# Windows shortcuts
 *.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
 
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Thumbnails
 ._*
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
 Network Trash Folder

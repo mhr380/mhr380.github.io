@@ -1,0 +1,21 @@
+{
+  "name": "mhrnote",
+  "version": "1.0.0",
+  "private": true,
+  "description": "mhr380's notes",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.4"
+  }
+}

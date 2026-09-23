@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { entryDate, formatDate, postHref, postsByYear, withBase } from "../../lib/site";
+
+const groups = postsByYear(await getCollection("posts"));
+---
+<BaseLayout>
+  <section>
+    {groups.map((group) => (
+      <>
+        <h3 class="code">{group.year}</h3>
+        {group.posts.map((post) => (
+          <ul>
+            <li>
+              <div class="post-date code">
+                <span>{formatDate(entryDate(post))}</span>
+              </div>
+              <div class="title">
+                <a href={postHref(post.id)}>{post.data.title}</a>
+              </div>
+            </li>
+          </ul>
+        ))}
+      </>
+    ))}
+    <p class="center">
+      <a href={withBase("/")}>About</a>
+    </p>
+  </section>
+</BaseLayout>

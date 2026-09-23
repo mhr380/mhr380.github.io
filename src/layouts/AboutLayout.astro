@@ -1,0 +1,32 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { site, withBase } from "../lib/site";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title = "About", description } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <article>
+    <slot />
+    {site.links.length > 0 && (
+      <p class="center">
+        {site.links.map((link, i) => (
+          <>
+            {i > 0 && " · "}
+            <a
+              href={withBase(link.href)}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+            >
+              {link.label}
+            </a>
+          </>
+        ))}
+      </p>
+    )}
+  </article>
+</BaseLayout>

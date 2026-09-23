@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import { entryDate, formatDate, htmlDate, withBase } from "../lib/site";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+---
+<BaseLayout title={post.data.title} description={post.data.description} type="article">
+  <article>
+    <div class="center">
+      <h1 class="title">{post.data.title}</h1>
+      <time class="code" datetime={htmlDate(entryDate(post))}>
+        {formatDate(entryDate(post), "long")}
+      </time>
+    </div>
+    <div class="divider"></div>
+    <slot />
+  </article>
+
+  <nav class="page-navigation">
+    <a class="home" href={withBase("/posts/")}>back</a>
+  </nav>
+</BaseLayout>

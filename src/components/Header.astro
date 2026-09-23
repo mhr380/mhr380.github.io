@@ -1,0 +1,15 @@
+---
+import { site, withBase, isHome, pageLabel } from "../lib/site";
+
+const home = isHome(Astro.url.pathname);
+const href = home ? withBase("/posts/") : withBase("/");
+const prompt = home ? site.prompts.posts : site.prompts.about;
+const label = pageLabel(Astro.url.pathname);
+---
+<aside class="logo">
+  <a href={href}>
+    <img src={withBase(site.logoUrl)} alt={site.author} class="logo-avatar" width="90" height="90" />
+  </a>
+  <span class="logo-prompt code">{prompt}</span>
+  {label && <h1 class="page-label">{label}</h1>}
+</aside>

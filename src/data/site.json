@@ -1,0 +1,20 @@
+{
+  "title": "mhr380",
+  "description": "mhr380's notes",
+  "author": "mhr380",
+  "url": "https://mhr380.github.io",
+  "lang": "ja",
+  "logoUrl": "/assets/avatar.png",
+  "pathPrefix": "/",
+  "math": false,
+  "socialShare": true,
+  "prompts": {
+    "about": "About the Author",
+    "posts": "Posts"
+  },
+  "links": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hajimemihara", "external": true },
+    { "label": "CV", "href": "/assets/CV.pdf", "external": true },
+    { "label": "Posts", "href": "/posts/" }
+  ]
+}

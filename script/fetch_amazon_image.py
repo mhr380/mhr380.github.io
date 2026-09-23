@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 import urllib.request
@@ -11,8 +12,8 @@ UA = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/120.0.0.0 Safari/537.36"
 )
-OUT_DIR = Path("assets/static/amazon")
-DATA_FILE = Path("_data/amazon.yml")
+OUT_DIR = Path("public/assets/static/amazon")
+DATA_FILE = Path("src/data/amazon.json")
 POSTS_DIR = Path("_posts")
 INCLUDE_URL_RE = re.compile(r'amazon_card\.html[^}]*?\burl="([^"]+)"')
 ASIN_RE = re.compile(r"/(?:dp|gp/product|gp/aw/d)/([A-Z0-9]{10})")
@@ -25,7 +26,7 @@ OG_RE_REV = re.compile(
     re.I,
 )
 PRODUCT_IMG_RE = re.compile(
-    r'https://m\.media-amazon\.com/images/I/[A-Za-z0-9%+\-._]+\.(?:jpg|jpeg|png)',
+    r"https://m\.media-amazon\.com/images/I/[A-Za-z0-9%+\-._]+\.(?:jpg|jpeg|png)",
     re.I,
 )
 
@@ -64,21 +65,26 @@ def extract_og_image(html: str) -> str | None:
     return None
 
 
-def load_map() -> dict[str, str]:
-    mapping: dict[str, str] = {}
+def load_map() -> dict:
     if not DATA_FILE.exists():
-        return mapping
-    for line in DATA_FILE.read_text(encoding="utf-8").splitlines():
-        m = re.match(r'^"([^"]+)":\s+(\S+)\s*$', line)
-        if m:
-            mapping[m.group(1)] = m.group(2)
-    return mapping
+        return {}
+    return json.loads(DATA_FILE.read_text(encoding="utf-8"))
 
 
-def save_map(mapping: dict[str, str]) -> None:
+def save_map(mapping: dict) -> None:
     DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
-    lines = [f'"{url}": {name}\n' for url, name in sorted(mapping.items())]
-    DATA_FILE.write_text("".join(lines), encoding="utf-8")
+    DATA_FILE.write_text(
+        json.dumps(mapping, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def set_image(mapping: dict, url: str, filename: str) -> None:
+    current = mapping.get(url)
+    if isinstance(current, dict):
+        mapping[url] = {**current, "image": filename}
+    else:
+        mapping[url] = filename
 
 
 def urls_from_posts() -> list[str]:
@@ -116,7 +122,7 @@ def main() -> int:
     mapping = load_map()
     for url in urls:
         asin, dest = fetch_image(url)
-        mapping[url] = dest.name
+        set_image(mapping, url, dest.name)
         print(f"{asin}\t{dest.as_posix()}\t{url}")
     save_map(mapping)
     return 0

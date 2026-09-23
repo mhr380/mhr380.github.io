@@ -7,7 +7,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
-DEFAULT_DIR = Path("assets/static")
+DEFAULT_DIR = Path("public/assets/static")
 DEFAULT_MAX = 1600
 DEFAULT_QUALITY = 82
 
