@@ -41,7 +41,7 @@ const imageAbs = new URL(image, Astro.site).href;
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content={site.author} />
-    <link rel="icon" href={withBase("/assets/favicon.png")} type="image/png" />
+    <link rel="icon" href={image} type="image/png" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title={site.title} href={withBase("/rss.xml")} />
     {site.socialShare && (
