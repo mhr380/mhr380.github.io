@@ -111,6 +111,61 @@ a.image {
   text-align: center;
   border: 0;
   border-radius: 5px;
+  cursor: zoom-in;
+}
+
+a.image img {
+  border-radius: 5px;
+  transition: opacity 0.12s ease, transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+a.image:hover img {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 0.72);
+  cursor: zoom-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: min(100%, 1100px);
+  max-height: 100%;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lightbox.is-open img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.image img,
+  .lightbox,
+  .lightbox img {
+    transition: none;
+  }
 }
 
 video {

@@ -24,4 +24,45 @@ const { post } = Astro.props;
   <nav class="page-navigation">
     <a class="home" href={withBase("/posts/")}>back</a>
   </nav>
+  <div class="lightbox" id="lightbox"></div>
 </BaseLayout>
+
+<script>
+  const box = document.getElementById("lightbox");
+
+  function closeLightbox() {
+    if (!box?.classList.contains("is-open")) return;
+    box.classList.remove("is-open");
+    window.setTimeout(() => {
+      if (!box.classList.contains("is-open")) box.replaceChildren();
+    }, 200);
+  }
+
+  function openLightbox(src: string, alt: string) {
+    if (!box) return;
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = alt;
+    box.replaceChildren(img);
+    box.classList.add("is-open");
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (box?.classList.contains("is-open")) {
+      event.preventDefault();
+      closeLightbox();
+      return;
+    }
+    const link = target.closest("a.image");
+    if (!(link instanceof HTMLAnchorElement)) return;
+    event.preventDefault();
+    const img = link.querySelector("img");
+    openLightbox(link.href, img?.alt ?? "");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+  });
+</script>
