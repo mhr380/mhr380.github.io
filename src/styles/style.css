@@ -326,7 +326,6 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   position: relative;
   margin: 0 auto 35px;
   text-align: center;
-  animation: drop-in 0.7s both;
 }
 
 .logo a {
@@ -608,20 +607,6 @@ section .post-date span {
 
   section a:hover {
     border-color: var(--heading);
-  }
-}
-
-@keyframes drop-in {
-  0% { transform: translate3d(0, -1000px, 0); }
-  60% { transform: translate3d(0, 25px, 0); }
-  75% { transform: translate3d(0, -10px, 0); }
-  90% { transform: translate3d(0, 5px, 0); }
-  100% { transform: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logo {
-    animation: none;
   }
 }
 
