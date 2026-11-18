@@ -21,21 +21,21 @@
         {
           "name": "UR12",
           "brand": "Steinberg",
-          "image": null,
+          "image": "amazon/B00QY4RLRQ.jpg",
           "url": "https://amazon.co.jp/dp/B00QY4RLRQ",
           "note": "中古で購入。テレワーク時のマイク入力として利用"
         },
         {
           "name": "EarPods",
           "brand": "Apple",
-          "image": null,
+          "image": "links/apple-earpods.jpg",
           "url": "https://www.apple.com/jp/shop/product/mwu53fe/a/earpods35-mm%E3%83%98%E3%83%83%E3%83%89%E3%83%95%E3%82%A9%E3%83%B3%E3%83%97%E3%83%A9%E3%82%B0",
           "note": "リモート時のテレカン用に利用"
         },
         {
           "name": "MDR-7506",
           "brand": "Sony",
-          "image": null,
+          "image": "links/MDR-7506.jpg",
           "url": "https://www.sony.jp/pro-audio/products/MDR-7506/"
         }
 
@@ -53,27 +53,27 @@
         {
           "name": "Thinkpad X270",
           "brand": "Lenovo",
-          "image": null,
+          "image": "links/thinkpad-x270.jpg",
           "url": "https://www.lenovo.com/jp/ja/p/laptops/thinkpad/thinkpad-x-series/thinkpad-x270/22tp2tx2700?orgRef=https%253A%252F%252Fwww.google.com%252F&srsltid=AYCX9vLSz2nYZn14fuzRIkdCBzmL5PeIRD_oKnymJudGajBmhozrB9E1",
           "note": "USキーを中古で購入"
         },
         {
           "name": "MX Keys Mini",
           "brand": "Logicool",
-          "image": null,
+          "image": "amazon/B0DCZJHG5S.jpg",
           "url": "https://link.amazon/B03R280wt",
           "note": "USキー"
         },
         {
           "name": "F75 Mechanical",
           "brand": "FreeWolf",
-          "image": null,
+          "image": "amazon/B0GDDJ2WJY.jpg",
           "url": "https://link.amazon/B09x5aV17"
         },
         {
           "name": "M720 Triathlon",
           "brand": "Logicool",
-          "image": null,
+          "image": "links/m720-triathlon.jpg",
           "url": "https://www.logicool.co.jp/ja-jp/shop/p/m720-triathlon.910-005629"
         }
       ]
