@@ -75,11 +75,53 @@
           "brand": "Logicool",
           "image": "links/m720-triathlon.jpg",
           "url": "https://www.logicool.co.jp/ja-jp/shop/p/m720-triathlon.910-005629"
+        },
+        {
+          "name": "iPad mini (第6世代)",
+          "brand": "Apple",
+          "image": "links/apple-ipad-mini.jpg",
+          "url": "https://www.apple.com/jp/ipad-mini/",
+          "note": "2025年に中古で購入。移動中のKindleやYouTube用"
         }
       ]
     },
 
 
+    {
+      "name": "Camera",
+      "items": [
+        {
+          "name": "α7 II",
+          "brand": "Sony",
+          "image": "links/ILCE-7M2.jpg",
+          "url": "https://www.sony.jp/ichigan/products/ILCE-7M2/"
+        },
+        {
+          "name": "Vario-Tessar T* FE 16-35mm F4 ZA OSS",
+          "brand": "Sony",
+          "image": "links/SEL1635Z.jpg",
+          "url": "https://www.sony.jp/ichigan/products/SEL1635Z/"
+        },
+        {
+          "name": "24-70mm F2.8 DG DN | Art",
+          "brand": "Sigma",
+          "image": "links/sigma-24-70-f28-dgdn.jpg",
+          "url": "https://www.sigma-global.com/jp/lenses/a019_24_70_28/"
+        },
+        {
+          "name": "Sonnar T* FE 55mm F1.8 ZA",
+          "brand": "Sony",
+          "image": "links/SEL55F18Z.jpg",
+          "url": "https://www.sony.jp/ichigan/products/SEL55F18Z/"
+        },
+        {
+          "name": "100-400mm F5-6.3 DG DN OS | Contemporary",
+          "brand": "Sigma",
+          "image": "links/sigma-100-400-dgdn.jpg",
+          "url": "https://www.sigma-global.com/jp/lenses/c020_100_400_5_63/"
+        }
+      ]
+    },
     {
       "name": "Carry",
       "items": [
@@ -135,6 +177,18 @@
           "brand": "New Balance",
           "image": "links/newbalance-U990V4.jpg",
           "url": "https://shop.newbalance.jp/pd/U990V4-41721-PMG-APAC.html"
+        },
+        {
+          "name": "990v3",
+          "brand": "New Balance",
+          "image": "links/newbalance-M990GY3.jpg",
+          "url": null
+        },
+        {
+          "name": "Lombard D212110",
+          "brand": "Danner",
+          "image": "amazon/B07DL4N46X.jpg",
+          "url": "https://www.amazon.co.jp/dp/B07DL4N46X"
         }
       ]
     }
