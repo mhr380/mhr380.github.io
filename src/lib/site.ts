@@ -20,8 +20,9 @@ export function pageLabel(pathname: string) {
   if (isHome(pathname)) return "About";
   const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
   const path = pathname.replace(/\/$/, "") || "/";
-  const posts = `${base === "/" ? "" : base}/posts`;
-  if (path === posts) return "Posts";
+  const root = base === "/" ? "" : base;
+  if (path === `${root}/posts`) return "Posts";
+  if (path === `${root}/things`) return "Things";
   return "";
 }
 

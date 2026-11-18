@@ -15,6 +15,7 @@
   "links": [
     { "label": "LinkedIn", "href": "https://www.linkedin.com/in/hajimemihara", "external": true },
     { "label": "CV", "href": "/assets/CV.pdf", "external": true },
-    { "label": "Posts", "href": "/posts/" }
+    { "label": "Posts", "href": "/posts/" },
+    { "label": "Things", "href": "/things/" }
   ]
 }

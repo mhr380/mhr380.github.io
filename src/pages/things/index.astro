@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import things from "../../data/things.json";
+import { withBase } from "../../lib/site";
+
+interface Item {
+  name: string;
+  brand?: string;
+  image?: string | null;
+  url?: string | null;
+  note?: string;
+}
+
+const categories: { name: string; items: Item[] }[] = things.categories;
+
+const imageSrc = (file: string) =>
+  /^https?:\/\//i.test(file) ? file : withBase(`/assets/static/${file}`);
+const relFor = (url: string) =>
+  /amzn\.to|amazon\./i.test(url) ? "noopener sponsored" : "noopener noreferrer";
+---
+<BaseLayout title="Things" description={things.intro}>
+  <div class="things">
+    {things.intro && <p class="things-intro">{things.intro}</p>}
+    {categories.map((category) => (
+      <>
+        <h3 class="things-heading code">
+          {category.name}
+          <span class="things-count">{category.items.length}</span>
+        </h3>
+        <ul class="things-grid">
+          {category.items.map((item) => {
+            const Tag = item.url ? "a" : "div";
+            const linkProps = item.url
+              ? { href: item.url, target: "_blank", rel: relFor(item.url) }
+              : {};
+            return (
+              <li>
+                <Tag class="thing" {...linkProps}>
+                  <span class="thing-image">
+                    {item.image ? (
+                      <img src={imageSrc(item.image)} alt="" loading="lazy" />
+                    ) : (
+                      <span class="thing-placeholder" aria-hidden="true">{item.name.slice(0, 1)}</span>
+                    )}
+                  </span>
+                  {item.brand && <span class="thing-brand">{item.brand}</span>}
+                  <span class="thing-name">{item.name}</span>
+                  {item.note && <span class="thing-note">{item.note}</span>}
+                </Tag>
+              </li>
+            );
+          })}
+        </ul>
+      </>
+    ))}
+    <p class="center things-back">
+      <a href={withBase("/")}>About</a>
+    </p>
+  </div>
+</BaseLayout>

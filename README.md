@@ -18,6 +18,7 @@ http://localhost:4321
 - 記事: `_posts/YYYY-MM-DD-slug.md`
 - 画像・動画: `public/assets/static/`
 - サイト設定: `src/data/site.json`
+- Things ページ（`/things/`）: `src/data/things.json`（画像は `public/assets/static/` からの相対パス）
 - Amazon / 外部リンクカード: `src/data/amazon.json`, `src/data/links.json`
 
 記事では従来どおり `{% include image.html %}` や `amazon_card` / `link_card` / `github_card` が使えます。

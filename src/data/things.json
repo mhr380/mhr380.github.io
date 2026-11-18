@@ -1,0 +1,142 @@
+{
+  "intro": "使っているもの、気に入っているもの。",
+  "categories": [
+    {
+      "name": "Audio",
+      "items": [
+        {
+          "name": "WH-1000XM3",
+          "brand": "Sony",
+          "image": "links/WH-1000XM3.jpg",
+          "url": "https://www.sony.jp/headphone/products/WH-1000XM3/",
+          "note": "2021年購入、いまだ現役"
+        },
+        {
+          "name": "WF-1000XM5",
+          "brand": "Sony",
+          "image": "amazon/B0CBKQZXT7.jpg",
+          "url": "https://amzn.to/3UUFOEY",
+          "note": "2026年購入"
+        },
+        {
+          "name": "UR12",
+          "brand": "Steinberg",
+          "image": null,
+          "url": "https://amazon.co.jp/dp/B00QY4RLRQ",
+          "note": "中古で購入。テレワーク時のマイク入力として利用"
+        },
+        {
+          "name": "EarPods",
+          "brand": "Apple",
+          "image": null,
+          "url": "https://www.apple.com/jp/shop/product/mwu53fe/a/earpods35-mm%E3%83%98%E3%83%83%E3%83%89%E3%83%95%E3%82%A9%E3%83%B3%E3%83%97%E3%83%A9%E3%82%B0",
+          "note": "リモート時のテレカン用に利用"
+        },
+        {
+          "name": "MDR-7506",
+          "brand": "Sony",
+          "image": null,
+          "url": "https://www.sony.jp/pro-audio/products/MDR-7506/"
+        }
+
+      ]
+    },
+    {
+      "name": "PC",
+      "items": [
+        {
+          "name": "自作PC",
+          "brand": "None",
+          "image": null,
+          "note": "2017年頃に制作。Intel Core i7-8700, 32GB, GeForce GTX 1050 Ti"
+        },
+        {
+          "name": "Thinkpad X270",
+          "brand": "Lenovo",
+          "image": null,
+          "url": "https://www.lenovo.com/jp/ja/p/laptops/thinkpad/thinkpad-x-series/thinkpad-x270/22tp2tx2700?orgRef=https%253A%252F%252Fwww.google.com%252F&srsltid=AYCX9vLSz2nYZn14fuzRIkdCBzmL5PeIRD_oKnymJudGajBmhozrB9E1",
+          "note": "USキーを中古で購入"
+        },
+        {
+          "name": "MX Keys Mini",
+          "brand": "Logicool",
+          "image": null,
+          "url": "https://link.amazon/B03R280wt",
+          "note": "USキー"
+        },
+        {
+          "name": "F75 Mechanical",
+          "brand": "FreeWolf",
+          "image": null,
+          "url": "https://link.amazon/B09x5aV17"
+        },
+        {
+          "name": "M720 Triathlon",
+          "brand": "Logicool",
+          "image": null,
+          "url": "https://www.logicool.co.jp/ja-jp/shop/p/m720-triathlon.910-005629"
+        }
+      ]
+    },
+
+
+    {
+      "name": "Carry",
+      "items": [
+        {
+          "name": "Ace V2 Ultralight",
+          "brand": "Wexley",
+          "image": "links/ace-v2-ultralight.jpg",
+          "url": "https://wexley.com/en-jp/products/ace-v2-ultralight",
+          "note": "35Lで約1.1kg"
+        },
+        {
+          "name": "ガジェットポーチ",
+          "brand": "無印良品",
+          "image": "links/4550344303801.jpg",
+          "url": "https://www.muji.com/jp/ja/store/cmdty/detail/4550344303801"
+        }
+      ]
+    },
+    {
+      "name": "Maker",
+      "items": [
+        {
+          "name": "ESP32 開発ボード",
+          "brand": "Freenove",
+          "image": "amazon/B0C9THDPXP.jpg",
+          "url": "https://amzn.to/4yDrEXl"
+        },
+        {
+          "name": "ニューブレッドボード SAD-101",
+          "brand": "サンハヤト",
+          "image": "amazon/B00DSKCS68.jpg",
+          "url": "https://amzn.to/4gSvyUW"
+        }
+      ]
+    },
+    {
+      "name": "Wear",
+      "items": [
+        {
+          "name": "ウォッシャブルミラノリブクルーネックセーター",
+          "brand": "Uniqlo",
+          "image": "links/uniqlo-E453754.jpg",
+          "url": "https://www.uniqlo.com/jp/ja/products/E453754-000/00"
+        },
+        {
+          "name": "Beefy-T",
+          "brand": "Hanes",
+          "image": "links/hanes-H5190-090.jpg",
+          "url": "https://www.hanesbrandsinc.jp/hanes/g/gH5190-090-S/"
+        },
+        {
+          "name": "990v4",
+          "brand": "New Balance",
+          "image": "links/newbalance-U990V4.jpg",
+          "url": "https://shop.newbalance.jp/pd/U990V4-41721-PMG-APAC.html"
+        }
+      ]
+    }
+  ]
+}
