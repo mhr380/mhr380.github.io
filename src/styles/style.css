@@ -769,7 +769,7 @@ html[data-theme="light"] .astro-code span {
 .thing-image img {
   width: 100%;
   height: 100%;
-  padding: 12px;
+  padding: 8px;
   object-fit: contain;
 }
 

@@ -38,7 +38,6 @@
           "image": "links/MDR-7506.jpg",
           "url": "https://www.sony.jp/pro-audio/products/MDR-7506/"
         }
-
       ]
     },
     {
@@ -75,6 +74,17 @@
           "brand": "Logicool",
           "image": "links/m720-triathlon.jpg",
           "url": "https://www.logicool.co.jp/ja-jp/shop/p/m720-triathlon.910-005629"
+        }
+      ]
+    },
+    {
+      "name": "Mobile",
+      "items": [
+        {
+          "name": "iPhone 17e",
+          "brand": "Apple",
+          "image": "links/apple-iphone-17e.jpg",
+          "url": "https://www.apple.com/jp/iphone-17e/"
         },
         {
           "name": "iPad mini (第6世代)",
@@ -85,8 +95,6 @@
         }
       ]
     },
-
-
     {
       "name": "Camera",
       "items": [
