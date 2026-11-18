@@ -19,7 +19,7 @@ const posts = defineCollection({
   loader: {
     name: "jekyll-posts",
     load: async ({ store, parseData, renderMarkdown, watcher }) => {
-      const dir = path.resolve(import.meta.dirname, "../_posts");
+      const dir = path.resolve(import.meta.dirname, "content/posts");
       watcher?.add(dir);
       store.clear();
       if (!fs.existsSync(dir)) return;
@@ -28,7 +28,7 @@ const posts = defineCollection({
         const raw = fs.readFileSync(path.join(dir, file), "utf8");
         const { data, body } = parseFrontmatter(raw);
         const id = file.replace(/\.md$/, "");
-        const expanded = expandJekyll(body);
+        const expanded = expandJekyll(body, id);
         store.set({
           id,
           data: await parseData({

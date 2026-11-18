@@ -12,9 +12,9 @@ UA = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/120.0.0.0 Safari/537.36"
 )
-OUT_DIR = Path("public/assets/static/amazon")
+OUT_DIR = Path("public/assets/products/amazon")
 DATA_FILE = Path("src/data/amazon.json")
-POSTS_DIR = Path("_posts")
+POSTS_DIR = Path("src/content/posts")
 INCLUDE_URL_RE = re.compile(r'amazon_card\.html[^}]*?\burl="([^"]+)"')
 ASIN_RE = re.compile(r"/(?:dp|gp/product|gp/aw/d)/([A-Z0-9]{10})")
 OG_RE = re.compile(

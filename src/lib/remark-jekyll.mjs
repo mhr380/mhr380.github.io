@@ -39,7 +39,7 @@ function amazonMeta(url) {
 function cardImage(file, folder) {
   if (!file) return "";
   if (file.includes("://")) return file;
-  return prefix(`/assets/static/${folder}/${file}`);
+  return prefix(`/assets/products/${folder}/${file}`);
 }
 
 function ctaFor(url) {
@@ -54,9 +54,9 @@ function cardHtml({ href, image, title, brand, cta, rel }) {
   return `<div class="amazon-card"><a class="amazon-card-link" href="${esc(href)}" target="_blank" rel="${rel}"><span class="amazon-card-image"><img src="${esc(image)}" alt="${esc(title)}"></span><span class="amazon-card-body"><span class="amazon-card-title">${esc(title)}</span>${brand ? `<span class="amazon-card-brand">${esc(brand)}</span>` : ""}<span class="amazon-card-cta">${esc(cta)}</span></span></a></div>`;
 }
 
-function renderInclude(name, a) {
+function renderInclude(name, a, postId) {
   if (name === "image") {
-    const src = prefix(`/assets/static/${a.file}`);
+    const src = prefix(`/assets/posts/${postId}/${a.file}`);
     const alt = a.alt || "Image";
     return `<a href="${esc(src)}" target="_blank" class="image"><img src="${esc(src)}" alt="${esc(alt)}"></a>`;
   }
@@ -103,9 +103,9 @@ function renderInclude(name, a) {
   return "";
 }
 
-export function expandJekyll(markdown) {
+export function expandJekyll(markdown, postId) {
   return markdown.replace(RELATIVE_RE, (_, p) => prefix(p)).replace(
     /^[ \t]*\{%\s*include\s+(\w+)\.html\s+([^%]*)%\}[ \t]*$/gm,
-    (_, name, raw) => renderInclude(name, attrs(raw)) || _,
+    (_, name, raw) => renderInclude(name, attrs(raw), postId) || _,
   );
 }

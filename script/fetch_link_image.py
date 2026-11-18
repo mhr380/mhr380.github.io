@@ -12,9 +12,9 @@ UA = (
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/120.0.0.0 Safari/537.36"
 )
-OUT_DIR = Path("public/assets/static/links")
+OUT_DIR = Path("public/assets/products/links")
 DATA_FILE = Path("src/data/links.json")
-POSTS_DIR = Path("_posts")
+POSTS_DIR = Path("src/content/posts")
 INCLUDE_URL_RE = re.compile(r'link_card\.html[^}]*?\burl="([^"]+)"')
 
 

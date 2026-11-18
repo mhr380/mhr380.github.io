@@ -14,7 +14,7 @@ interface Item {
 const categories: { name: string; items: Item[] }[] = things.categories;
 
 const imageSrc = (file: string) =>
-  /^https?:\/\//i.test(file) ? file : withBase(`/assets/static/${file}`);
+  /^https?:\/\//i.test(file) ? file : withBase(`/assets/products/${file}`);
 const relFor = (url: string) =>
   /amzn\.to|amazon\./i.test(url) ? "noopener sponsored" : "noopener noreferrer";
 ---

@@ -2,13 +2,7 @@ node_modules/
 dist/
 .astro/
 
-_site/
-.jekyll-cache/
-.jekyll-metadata
-.sass-cache/
 .vscode/
-.bundle/
-vendor/bundle/
 
 __pycache__/
 *.pyc
@@ -17,7 +11,7 @@ __pycache__/
 *.mov
 * copy.md
 * copy.*
-public/assets/static/old/
+originals/
 
 Thumbs.db
 ehthumbs.db

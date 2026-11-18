@@ -7,7 +7,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
-DEFAULT_DIR = Path("public/assets/static")
+DEFAULT_DIR = Path("public/assets/posts")
 DEFAULT_MAX = 1600
 DEFAULT_QUALITY = 82
 
@@ -47,7 +47,7 @@ def collect_files(paths: list[Path]) -> list[Path]:
     for path in paths:
         if path.is_dir():
             files.extend(
-                sorted(p for p in path.iterdir() if p.suffix.lower() in IMAGE_EXTS)
+                sorted(p for p in path.rglob("*") if p.suffix.lower() in IMAGE_EXTS)
             )
         elif path.suffix.lower() in IMAGE_EXTS:
             files.append(path)

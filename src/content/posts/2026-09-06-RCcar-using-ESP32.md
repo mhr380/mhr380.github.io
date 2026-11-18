@@ -14,7 +14,7 @@ title: ESP32でラジコンを作ったメモ
 
 家に転がっていたPS4のコントローラーで動くようにした。
 
-<video src="{{ '/assets/static/esp32_car.mp4' | relative_url }}" controls></video>
+<video src="{{ '/assets/posts/2026-09-06-RCcar-using-ESP32/esp32_car.mp4' | relative_url }}" controls></video>
 
 ## 使ったもの
 
