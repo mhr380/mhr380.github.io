@@ -176,13 +176,15 @@
           "name": "990v4",
           "brand": "New Balance",
           "image": "links/newbalance-U990V4.jpg",
-          "url": "https://shop.newbalance.jp/pd/U990V4-41721-PMG-APAC.html"
+          "url": "https://shop.newbalance.jp/pd/U990V4-41721-PMG-APAC.html",
+          "note": "2024年にAtmosで購入"
         },
         {
           "name": "990v3",
           "brand": "New Balance",
           "image": "links/newbalance-M990GY3.jpg",
-          "url": null
+          "url": null,
+          "note": "2022年に出張先のカリフォルニアで購入"
         },
         {
           "name": "Lombard D212110",
